@@ -68,4 +68,28 @@ public class TestRPS {
 			assertEquals(Result.LOSE, this.sim.playRPS(RPS.SCISSORS));
 	}
 
+	@Test
+	void testRockDraw() {
+		Mockito.when(this.rand.nextInt(3)).thenReturn(0);
+
+		for (int i = 0; i < 1000; i++)
+			assertEquals(Result.DRAW, this.sim.playRPS(RPS.ROCK));
+	}
+
+	@Test
+	void testPaperDraw() {
+		Mockito.when(this.rand.nextInt(3)).thenReturn(1);
+
+		for (int i = 0; i < 1000; i++)
+			assertEquals(Result.DRAW, this.sim.playRPS(RPS.PAPER));
+	}
+
+	@Test
+	void testScissorsDraw() {
+		Mockito.when(this.rand.nextInt(3)).thenReturn(2);
+
+		for (int i = 0; i < 1000; i++)
+			assertEquals(Result.DRAW, this.sim.playRPS(RPS.SCISSORS));
+	}
+
 }
