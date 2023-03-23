@@ -11,7 +11,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-@ExtendWith(MockitoExtension.class)
+@ExtendWith(MockitoExtension.class) // enables mockito for these tests
 public class TestRPS {
 
 	@Mock // create the mock Random object
@@ -25,8 +25,8 @@ public class TestRPS {
 		// Force CPU choice to be SCISSORS
 		Mockito.when(this.rand.nextInt(3)).thenReturn(2);
 
-		// TODO: assert multiple times using a loop
-		assertEquals(Result.WIN, this.sim.playRPS(RPS.ROCK));
+		for (int i = 0; i < 1000; i++)
+			assertEquals(Result.WIN, this.sim.playRPS(RPS.ROCK));
 
 	}
 
