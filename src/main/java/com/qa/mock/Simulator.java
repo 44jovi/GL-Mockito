@@ -1,6 +1,7 @@
 package com.qa.mock;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Simulator {
 	private Random rand = new Random(); // mock it viciously
@@ -33,6 +34,23 @@ public class Simulator {
 		System.out.println("You picked: " + playerChoice + " CPU picked: " + cpuChoice);
 
 		return playerChoice.beats(cpuChoice);
+
+	}
+
+	// TODO: test scanner input
+	public int multiply() {
+
+		int a;
+		int b;
+
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter first number:");
+		a = Integer.parseInt(scan.nextLine());
+		System.out.println("Enter second number:");
+		b = Integer.parseInt(scan.nextLine());
+		scan.close();
+
+		return a * b;
 
 	}
 }
