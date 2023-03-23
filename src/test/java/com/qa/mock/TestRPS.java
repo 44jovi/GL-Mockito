@@ -27,7 +27,14 @@ public class TestRPS {
 
 		for (int i = 0; i < 1000; i++)
 			assertEquals(Result.WIN, this.sim.playRPS(RPS.ROCK));
+	}
 
+	@Test
+	void testPaperbeatsRock() {
+		Mockito.when(this.rand.nextInt(3)).thenReturn(0);
+
+		for (int i = 0; i < 1000; i++)
+			assertEquals(Result.WIN, this.sim.playRPS(RPS.PAPER));
 	}
 
 }
